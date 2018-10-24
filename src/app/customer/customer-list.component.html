@@ -1,0 +1,8 @@
+<div>
+    <h1>Customer List</h1>
+    <ul>
+        <li *ngFor="let item of customers">
+            <app-customer-inline [customer]="item" (closeOthers)="disabledOtherChildsEditMode($event)" (removeCustomer)="removeCustomerFromList($event)"></app-customer-inline>
+        </li>
+    </ul>
+</div>

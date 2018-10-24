@@ -1,0 +1,14 @@
+<h1>Employee List!</h1>
+<a href="employee/detail">Add New Employee!</a>
+<table style="width: 80%; margin: 20px 10%;">
+    <thead>
+        <th style="width: 5%;">ID</th>
+        <th>Name</th>
+        <th style="width: 15%;">#</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees">
+            <employee-inline [employee]="employee" (onEdit)="onEmployeeChildEdit($event)" class="row-inline"></employee-inline>
+        </tr>
+    </tbody>
+</table>

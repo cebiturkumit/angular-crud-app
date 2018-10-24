@@ -1,0 +1,25 @@
+<h1>Employee Detail!</h1>
+<table style="text-align: left;">
+    <tbody>
+        <tr>
+            <td>Id</td>
+            <td>
+                <span>{{employee.id}}</span>
+            </td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>
+                <input [(ngModel)]="employee.name">
+            </td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="2" style="text-align: right;">
+                <button type="button" (click)="redirectList()">Geri</button>
+                <button type="button" (click)="saveEmployee()">Kaydet</button>
+            </td>
+        </tr>
+    </tfoot>
+</table>

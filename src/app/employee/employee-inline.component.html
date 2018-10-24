@@ -1,0 +1,27 @@
+<ng-container *ngIf="enableEditing; then editTemplate; else listTemplate"></ng-container>
+
+<ng-template #listTemplate>
+    <td>{{employee.id}}</td>
+    <td>{{employee.name}}</td>
+    <td>
+        <a href="/employee/detail/{{employee.id}}">Detail</a>
+        &nbsp;|&nbsp;
+        <a href="javascript:;" (click)="edit()">Edit</a>
+        &nbsp;|&nbsp;
+        <a href="/employee/delete/{{employee.id}}">Delete</a>
+    </td>
+</ng-template>
+<ng-template #editTemplate>
+    <td>
+        <input type="hidden" name="id" [value]="employee.id">
+        <span>{{employee.id}}</span>
+    </td>
+    <td>
+        <input [(ngModel)]="employee.name">
+    </td>
+    <td>
+        <a href="javascript:;" (click)="save()">Save</a>
+        &nbsp;|&nbsp;
+        <a href="javascript:;" (click)="cancel()">Cancel</a>
+    </td>
+</ng-template>
